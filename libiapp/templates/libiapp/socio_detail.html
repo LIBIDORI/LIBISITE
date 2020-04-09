@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+    <h1>Socio: {{ socio.apellidos }}, {{ socio.nombre }}</h1>
+
+    <p><a href="{% url 'socio_update' socio.numero %}">Modificar </a> <a href="{% url 'socio_delete' socio.numero %}">Eliminar</a></p>
+    <p><strong>Número:</strong> {{ socio.numero }}</p>
+    <p><strong>NIF/NIE:</strong> {{ socio.nif_nie }}</p>
+    <p><strong>Domicilio:</strong> {{ socio.domicilio }}</p>
+    <p><strong>Provincia:</strong> {{ socio.cprovincia }}</p>
+    <p><strong>Municipio:</strong> {{ socio.cmunicipio }}</p>
+    <p><strong>Fecha de Alta:</strong> {{ socio.fecha_alta }}</p>
+    <p><strong>Fecha de Baja:</strong> {{ socio.fecha_baja }}</p>
+
+    <div style="margin-left:20px;margin-top:20px">
+
+        <h4>Incidencias</h4>
+
+    </div>
+
+{% endblock %}

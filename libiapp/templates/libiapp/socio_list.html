@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>Lista de Socios</h1>
+
+    {% if socio_list %}
+    <table style="width:500px">
+      <tr>
+        <th width="30 px">Número de Socio</th>
+        <th>Apellidos, Nombre</th>
+        <th>NIF/NIE</th>
+        <th>Fecha de Alta</th>
+        <th>Fecha de Baja</th>
+      </tr>
+      {% for socio in socio_list %}
+      <tr>
+        <td>{{ socio.numero }}</a></td>
+        <td><a href="{{ socio.get_absolute_url }}">{{ socio.apellidos }}, {{ socio.nombre }}</a></td>
+        <td>{{ socio.nif_nie }}</td>
+        <td>{{ socio.fecha_alta }}</td>
+        <td>{{ fecha_baja }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+        <p>No hay ningún socio.</p>
+    {% endif %}
+{% endblock %}

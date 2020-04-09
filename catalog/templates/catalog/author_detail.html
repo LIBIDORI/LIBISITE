@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>Autor: {{ author.first_name }} {{ author.last_name}}</h1>
+
+    <p>{{ author.date_of_birth }} - {{ author.date_of_death }}</p>
+    <p><a href="{% url 'author_update' author.id %}">Modificar</a> <a href="{% url 'author_delete' author.id %}">Borrar</a></p>
+    <p><strong>Número de obras disponibles:</strong> {{ author.book_set.count }}</p>
+    <p><strong>Número de ejemplares disponibles:</strong></p> {% for libro in author.book_set.all %} {{libro.bookinstance_set.all}} {% endfor %}
+
+    <div style="margin-left:20px;margin-top: 20px;">
+        <h4>Libros</h4>
+
+        {% for libro in author.book_set.all %}
+        <p><strong><a href="{% url 'book-detail' libro.id %}">{{ libro.title }}</a> ({{libro.bookinstance_set.count}})</strong></p>
+        <p> {{ libro.summary }}</p>
+        <p><strong>ISBN:</strong> {{ libro.isbn }}</p>
+        <p><strong>Género:</strong> {% for genre in libro.genre.all %} {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        <p class="text-muted"><strong>Id: </strong>{{ libro.id }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base_generic.html"%}
+
+{% block content%}
+
+<h1>Gestión de Socios</h1>
+
+    <p>Bienvenido a <em>Gestión de Socios</em></p>
+<h2>Dynamic content</h2>
+
+    <p>La asociación tiene los siguientes contadores: </p>
+    <ul>
+        <li><strong>Número de socios: </strong>{{num_socios}}</li>
+        <li><strong>Número de socios de alta: </strong>{{num_socios_alta}}</li>
+        <li><strong>Número de socios de baja: </strong>{{num_socios_baja}}</li>
+    </ul>
+
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Borrar Socio</h1>
+
+<p>¿Está seguro de que desea borrar el socio: {{ socio }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" action="" value="Sí, bórralo"/>
+</form>
+
+{% endblock %}
