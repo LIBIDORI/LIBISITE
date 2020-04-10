@@ -22,13 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '#(fnd%1%_xo6#6%1pwbku4mlcjy*48_8q+6qw@nl#as2f)w6y^'
 
-import os
-
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','#(fnd%1%_xo6#6%1pwbku4mlcjy*48_8q+6qw@nl#as2f)w6y^'
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','#(fnd%1%_xo6#6%1pwbku4mlcjy*48_8q+6qw@nl#as2f)w6y^'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-#DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = []
 
