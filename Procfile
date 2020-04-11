@@ -1,1 +1,1 @@
-web: gunicorn libisite.wsgi.application --log-file -
+web: gunicorn libisite.wsgi --log-file -
