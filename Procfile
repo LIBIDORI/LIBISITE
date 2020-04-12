@@ -1,1 +1,1 @@
-web: gunicorn LIBISite.wsgi:application --log-file - --log-level debug
+web: gunicorn LIBISite.wsgi --log-file - --log-level debug
